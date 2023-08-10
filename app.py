@@ -6,7 +6,6 @@ import time
 
 
 def process_main_page():
-
     show_main_page()
     df = process_side_bar_inputs()
     df1 = process_rating_inputs()
@@ -14,7 +13,6 @@ def process_main_page():
 
 
 def show_main_page():
-
     image = Image.open('data/intro.jpg')
     st.set_page_config(
         layout="wide",
@@ -33,7 +31,7 @@ def show_main_page():
 
 
 def process_side_bar_inputs():
-    '''Function process side bar inputs and return DataFrame'''
+    """Function process sidebar inputs and return DataFrame"""
 
     st.sidebar.header('Personal information')
     gender = st.sidebar.radio('Gender', ['Male', 'Female'])
@@ -53,7 +51,7 @@ def process_side_bar_inputs():
 
 
 def process_rating_inputs():
-    '''Function process page inputs and return DataFrame'''
+    """Function process page inputs and return DataFrame"""
 
     st.write('## Please rate your flight 📋')
     col1, col2 = st.columns(2)
@@ -77,7 +75,7 @@ def process_rating_inputs():
 
 
 def prediction(df, df1):
-    '''Function to preprocess inputs and predict'''
+    """Function to preprocess inputs and predict"""
 
     if st.button('Predict!'):
         with (st.spinner('In progress..')):
